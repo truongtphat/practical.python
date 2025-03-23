@@ -4,9 +4,9 @@ positiveCount = 0
 negativeCount = 0
 for i in data1:
     if i >= 0:
-        positiveCount+= i
+        positiveCount += i
     else:
-        negativeCount+=i
+        negativeCount += i
 
 print(positiveCount)
 print(negativeCount)
@@ -29,11 +29,34 @@ data3 = [4, 5, 6, 7, 3, 9, 11, 2, 10]
 # Ex4: print all Possible Combinations from the three Digits
 data4 = [1, 2, 3]
 
+
+def fun(arr, path=[]):
+    # Base case
+    if len(path) == len(arr):
+        print(path)
+        return
+    # Recursive case
+    for num in arr:
+        if num not in path:
+            fun(arr, path + [num])
+
+
+# Call the function
+fun(data4)
+
 # Ex5: Given two matrices (2 nested lists), the task is to write a Python program
 # to add elements to each row from initial matrix.
 # For example: Input : test_list1 = [[4, 3, 5,], [1, 2, 3], [3, 7, 4]], test_list2 = [[1], [9], [8]]
 # Output : [[4, 3, 5, 1], [1, 2, 3, 9], [3, 7, 4, 8]]
-data5_list1 = [[4, 3, 5, ], [1, 2, 3], [3, 7, 4]]
+data5_list1 = [
+    [
+        4,
+        3,
+        5,
+    ],
+    [1, 2, 3],
+    [3, 7, 4],
+]
 data5_list2 = [[1, 3], [9, 3, 5, 7], [8]]
 
 # Ex6:  Write a program which will find all such numbers which are divisible by 7
